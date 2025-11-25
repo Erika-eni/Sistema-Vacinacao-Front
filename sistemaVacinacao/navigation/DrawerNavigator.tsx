@@ -6,10 +6,14 @@ import HomeScreen from '@/screens/HomeScreen';
 import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
 import CartoesScreen from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
-import EnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
+import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen';
 import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
 import FuncionariosScreen from '@/screens/Funcionarios/FuncionariosScreen';
 import UnidadesScreen from '@/screens/Unidades/UnidadesScreen';
+import VacinasScreen from '@/screens/Vacinas/VacinasScreen';
+import CriarEnderecosScreen from '@/screens/Enderecos/CriarEnderecosScreen';
+import EditarEnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
+
 
 
 export type DrawerParamList = {
@@ -18,6 +22,8 @@ export type DrawerParamList = {
     Cartao: undefined;
     Cidadaos: undefined;
     Enderecos: undefined;
+    EditarEnderecos: {enderecos: Enderecos};
+    CriarEnderecos:undefined;
     Fabricantes: undefined;
     Funcionarios: undefined;
     Unidades: undefined;
@@ -58,6 +64,14 @@ const DrawerNavigator = () => {
         }}
       />
       <Drawer.Screen
+        name="Vacinas"
+        component={VacinasScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="eyedrop-outline" size={size} color={color} />,
+          title: 'Vacinas',
+        }}
+      />
+      <Drawer.Screen
         name="Unidades"
         component={UnidadesScreen}
         options={{
@@ -69,9 +83,19 @@ const DrawerNavigator = () => {
         name="Enderecos"
         component={EnderecosScreen}
         options={{
-          drawerIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} />,
+          drawerIcon: ({ color, size }) => <Ionicons name="golf-outline" size={size} color={color} />,
           title: 'Endereços',
         }}
+      />
+      <Drawer.Screen
+        name="CriarEnderecos"
+        component={CriarEnderecosScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+      />
+      <Drawer.Screen
+        name="EditarEnderecos"
+        component={EditarEnderecosScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
       />
       <Drawer.Screen
         name="Fabricantes"
