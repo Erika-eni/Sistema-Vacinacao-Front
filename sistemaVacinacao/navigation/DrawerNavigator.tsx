@@ -9,6 +9,7 @@ import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
 import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
 import FuncionariosScreen from '@/screens/Funcionarios/FuncionariosScreen';
+import UnidadesScreen from '@/screens/Unidades/UnidadesScreen';
 
 
 export type DrawerParamList = {
@@ -56,6 +57,14 @@ const DrawerNavigator = () => {
           title: 'Agendamentos',
         }}
       />
+      <Drawer.Screen
+        name="Unidades"
+        component={UnidadesScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="trail-sign-outline" size={size} color={color} />,
+          title: 'Unidades',
+        }}
+      /> 
       <Drawer.Screen
         name="Enderecos"
         component={EnderecosScreen}
