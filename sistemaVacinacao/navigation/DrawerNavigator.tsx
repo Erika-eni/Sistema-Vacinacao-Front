@@ -7,6 +7,7 @@ import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
 import CartoesScreen from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
+import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
 
 
 export type DrawerParamList = {
@@ -62,6 +63,14 @@ const DrawerNavigator = () => {
           title: 'Endereços',
         }}
       />
+      <Drawer.Screen
+        name="Fabricantes"
+        component={FabricantesScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="pin-outline" size={size} color={color} />,
+          title: 'Fabricantes',
+        }}
+      />  
       <Drawer.Screen
         name="Cidadaos"
         component={CidadaosScreen}
