@@ -3,6 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 import HomeScreen from '@/screens/HomeScreen';
+import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
 
 
 export type DrawerParamList = {
@@ -40,6 +41,14 @@ const DrawerNavigator = () => {
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color}  />,
           title: 'Início',
+        }}
+      />
+      <Drawer.Screen
+        name="Agendamentos"
+        component={AgendamentosScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} />,
+          title: 'Agendamentos',
         }}
       />
     </Drawer.Navigator>  
