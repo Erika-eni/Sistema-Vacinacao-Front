@@ -6,6 +6,7 @@ import HomeScreen from '@/screens/HomeScreen';
 import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
 import CartoesScreen from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
+import EnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
 
 
 export type DrawerParamList = {
@@ -51,6 +52,14 @@ const DrawerNavigator = () => {
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} />,
           title: 'Agendamentos',
+        }}
+      />
+      <Drawer.Screen
+        name="Enderecos"
+        component={EnderecosScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} />,
+          title: 'Endereços',
         }}
       />
       <Drawer.Screen
