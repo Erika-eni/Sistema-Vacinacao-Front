@@ -8,6 +8,7 @@ import CartoesScreen from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
 import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
+import FuncionariosScreen from '@/screens/Funcionarios/FuncionariosScreen';
 
 
 export type DrawerParamList = {
@@ -77,6 +78,14 @@ const DrawerNavigator = () => {
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="person-add-outline" size={size} color={color} />,
           title: 'Cidadãos',
+        }}
+      />  
+      <Drawer.Screen
+        name="Funcionarios"
+        component={FuncionariosScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="people-outline" size={size} color={color} />,
+          title: 'Funcionarios',
         }}
       />  
       <Drawer.Screen
