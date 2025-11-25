@@ -4,6 +4,7 @@ import React from 'react';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 import HomeScreen from '@/screens/HomeScreen';
 import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
+import CartoesScreen from '@/screens/Cartoes/CartoesScreen';
 
 
 export type DrawerParamList = {
@@ -49,6 +50,14 @@ const DrawerNavigator = () => {
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} />,
           title: 'Agendamentos',
+        }}
+      />
+      <Drawer.Screen
+        name="Cartao"
+        component={CartoesScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="wallet-outline" size={size} color={color} />,
+          title: 'Cartões',
         }}
       />
     </Drawer.Navigator>  
