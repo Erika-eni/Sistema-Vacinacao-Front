@@ -7,7 +7,7 @@ import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
 import CartoesScreen, { Cartao } from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen';
-import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
+import FabricantesScreen, { Fabricantes } from '@/screens/Fabricantes/FabricantesScreen';
 import FuncionariosScreen, { Funcionarios } from '@/screens/Funcionarios/FuncionariosScreen';
 import UnidadesScreen, { Unidades } from '@/screens/Unidades/UnidadesScreen';
 import VacinasScreen from '@/screens/Vacinas/VacinasScreen';
@@ -19,6 +19,8 @@ import CriarUnidadesScreen from '@/screens/Unidades/CriarUnidadesScreen';
 import EditarUnidadesScreen from '@/screens/Unidades/EditarUnidadesScreen';
 import CriarFuncionariosScreen from '@/screens/Funcionarios/CriarFuncionariosScreen';
 import EditarFuncionariosScreen from '@/screens/Funcionarios/EditarFuncionariosScreen';
+import CriarFabricantesScreen from '@/screens/Fabricantes/CriarFabricantesScreen';
+import EditarFabricantesScreen from '@/screens/Fabricantes/EditarFabricantesScreen';
 
 
 
@@ -33,6 +35,8 @@ export type DrawerParamList = {
     EditarEnderecos: {enderecos: Enderecos};
     CriarEnderecos:undefined;
     Fabricantes: undefined;
+    EditarFabricantes: {fabricantes: Fabricantes};
+    CriarFabricantes: undefined;
     Funcionarios: undefined;
     EditarFuncionarios: {funcionarios: Funcionarios};
     CriarFuncionarios: undefined;
@@ -127,6 +131,16 @@ const DrawerNavigator = () => {
           title: 'Fabricantes',
         }}
       />  
+      <Drawer.Screen
+        name="CriarFabricantes"
+        component={CriarFabricantesScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+      />
+      <Drawer.Screen
+        name="EditarFabricantes"
+        component={EditarFabricantesScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+      />
       <Drawer.Screen
         name="Cidadaos"
         component={CidadaosScreen}

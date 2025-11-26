@@ -73,7 +73,7 @@ const EditarFuncionariosScreen = ({ route, navigation }: Props) => {
         onChangeText={setRegistro}
         style={styles.input}
       />
-      <Text style={styles.label}>Unidade</Text>
+      <Text style={styles.label}>Unidade Id</Text>
     <TextInput
         value={unidade}
         onChangeText={setUnidade}
