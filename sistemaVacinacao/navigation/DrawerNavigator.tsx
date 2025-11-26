@@ -4,7 +4,7 @@ import React from 'react';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 import HomeScreen from '@/screens/HomeScreen';
 import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
-import CartoesScreen from '@/screens/Cartoes/CartoesScreen';
+import CartoesScreen, { Cartao } from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen';
 import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
@@ -13,6 +13,8 @@ import UnidadesScreen from '@/screens/Unidades/UnidadesScreen';
 import VacinasScreen from '@/screens/Vacinas/VacinasScreen';
 import CriarEnderecosScreen from '@/screens/Enderecos/CriarEnderecosScreen';
 import EditarEnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
+import CriarCartoesScreen from '@/screens/Cartoes/CriarCartoesScreen';
+import EditarCartoesScreen from '@/screens/Cartoes/EditarCartoesScreen';
 
 
 
@@ -20,6 +22,8 @@ export type DrawerParamList = {
     Vacinas: undefined;
     Agendamentos: undefined;
     Cartao: undefined;
+    EditarCartoes: {cartoes: Cartao};
+    CriarCartoes: undefined;
     Cidadaos: undefined;
     Enderecos: undefined;
     EditarEnderecos: {enderecos: Enderecos};
@@ -128,6 +132,16 @@ const DrawerNavigator = () => {
           drawerIcon: ({ color, size }) => <Ionicons name="wallet-outline" size={size} color={color} />,
           title: 'Cartões',
         }}
+      />
+      <Drawer.Screen
+        name="CriarCartoes"
+        component={CriarCartoesScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+      />
+      <Drawer.Screen
+        name="EditarCartoes"
+        component={EditarCartoesScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
       />
     </Drawer.Navigator>  
   );
