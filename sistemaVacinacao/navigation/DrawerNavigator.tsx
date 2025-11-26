@@ -9,12 +9,14 @@ import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen';
 import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
 import FuncionariosScreen from '@/screens/Funcionarios/FuncionariosScreen';
-import UnidadesScreen from '@/screens/Unidades/UnidadesScreen';
+import UnidadesScreen, { Unidades } from '@/screens/Unidades/UnidadesScreen';
 import VacinasScreen from '@/screens/Vacinas/VacinasScreen';
 import CriarEnderecosScreen from '@/screens/Enderecos/CriarEnderecosScreen';
 import EditarEnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
 import CriarCartoesScreen from '@/screens/Cartoes/CriarCartoesScreen';
 import EditarCartoesScreen from '@/screens/Cartoes/EditarCartoesScreen';
+import CriarUnidadesScreen from '@/screens/Unidades/CriarUnidadesScreen';
+import EditarUnidadesScreen from '@/screens/Unidades/EditarUnidadesScreen';
 
 
 
@@ -31,6 +33,8 @@ export type DrawerParamList = {
     Fabricantes: undefined;
     Funcionarios: undefined;
     Unidades: undefined;
+    EditarUnidades: {unidades: Unidades};
+    CriarUnidades: undefined;
     Home: undefined;
 };
 
@@ -83,6 +87,16 @@ const DrawerNavigator = () => {
           title: 'Unidades',
         }}
       /> 
+      <Drawer.Screen
+        name="CriarUnidades"
+        component={CriarUnidadesScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+      />
+      <Drawer.Screen
+        name="EditarUnidades"
+        component={EditarUnidadesScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+      />
       <Drawer.Screen
         name="Enderecos"
         component={EnderecosScreen}

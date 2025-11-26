@@ -51,6 +51,7 @@ const CartoesScreen = ({ navigation }: Props) => {
   const renderItem = ({ item }: { item: Cartao }) => (
     <View style={styles.card}>
       <Text style={styles.numero}>{item.numero}</Text>
+      <Text style={styles.criacao}>Id: {item.id}</Text>
       <Text style={styles.criacao}>{item.criacao}</Text>
       <Text style={styles.zona}>{item.zona}</Text>
       <Text style={styles.status}>{item.status}</Text>
@@ -87,7 +88,7 @@ const CartoesScreen = ({ navigation }: Props) => {
       style={styles.fab}
       onPress={() => navigation.navigate('CriarCartoes')}
     >
-      <Ionicons name="add" size={28} color="#fff"  />
+      <Ionicons name="add" size={28} color="#f0f0da"  />
     </TouchableOpacity>
     </View>
   );
@@ -97,7 +98,7 @@ const CartoesScreen = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f0da',
     paddingHorizontal: 16,
     paddingTop: 16,
   },
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 12,
-    color: '#333',
+    color: '#59382d',
     alignSelf: 'center',
   },
   card: {
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 12,
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: '#59382d',
     shadowOpacity: 0.05,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
   numero: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#222',
+    color: '#59382d',
   },
   criacao: {
     fontSize: 14,
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   editButton: {
-    backgroundColor: '#4B7BE5',
+    backgroundColor: '#9ac6b1',
     padding: 8,
     borderRadius: 6,
     marginRight: 8,
@@ -153,13 +154,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 20,
     bottom: 20,
-    backgroundColor: '#0D47A1',
+    backgroundColor: '#8b8b72',
     borderRadius: 28,
     padding: 14,
     elevation: 4,
   },
   deleteButton: {
-    backgroundColor: '#E54848',
+    backgroundColor: '#c74e16',
     padding: 8,
     borderRadius: 6,
     marginRight: 8,

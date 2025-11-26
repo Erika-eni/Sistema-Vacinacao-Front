@@ -52,6 +52,7 @@ const EnderecosScreen = ({ navigation }: Props) => {
   const renderItem = ({ item }: { item: Enderecos }) => (
     <View style={styles.card}>
       <Text style={styles.rua}>{item.rua}</Text>
+      <Text style={styles.bairro}>Id: {item.id}</Text>
       <Text style={styles.bairro}>{item.bairro}</Text>
       <Text style={styles.cidade}>{item.cidade}</Text>
       <Text style={styles.estado}>{item.estado}</Text>
@@ -75,7 +76,7 @@ const EnderecosScreen = ({ navigation }: Props) => {
     <View style={styles.container}>
       <Text style={styles.title}>Endereços</Text>
       {loading ? (
-        <ActivityIndicator size="large" color="#4B7BE5" />
+        <ActivityIndicator size="large" color="#9ac6b1" />
       ) : (
         <FlatList
           data={enderecos}
@@ -88,7 +89,7 @@ const EnderecosScreen = ({ navigation }: Props) => {
       style={styles.fab}
       onPress={() => navigation.navigate('CriarEnderecos')}
     >
-      <Ionicons name="add" size={28} color="#fff"  />
+      <Ionicons name="add" size={28} color="#f0f0da"  />
     </TouchableOpacity>
     </View>
   );
@@ -98,7 +99,7 @@ const EnderecosScreen = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f0da',
     paddingHorizontal: 16,
     paddingTop: 16,
   },
@@ -106,16 +107,16 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     marginBottom: 12,
-    color: '#333',
+    color: '#59382d',
     alignSelf: 'center',
   },
   card: {
-    backgroundColor: '#f0f4ff',
+    backgroundColor: '#ffffff',
     padding: 16,
     borderRadius: 10,
     marginBottom: 12,
     elevation: 2,
-    shadowColor: '#000',
+    shadowColor: '#59382d',
     shadowOpacity: 0.05,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 4,
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
   rua: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#222',
+    color: '#59382d',
   },
   bairro: {
     fontSize: 14,
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   editButton: {
-    backgroundColor: '#4B7BE5',
+    backgroundColor: '#9ac6b1',
     padding: 8,
     borderRadius: 6,
     marginRight: 8,
@@ -154,13 +155,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 20,
     bottom: 20,
-    backgroundColor: '#0D47A1',
+    backgroundColor: '#8b8b72',
     borderRadius: 28,
     padding: 14,
     elevation: 4,
   },
   deleteButton: {
-    backgroundColor: '#E54848',
+    backgroundColor: '#c74e16',
     padding: 8,
     borderRadius: 6,
     marginRight: 8,
