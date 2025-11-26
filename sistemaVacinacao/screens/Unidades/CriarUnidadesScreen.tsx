@@ -82,10 +82,10 @@ const CriarUnidadesScreen = ({ navigation }: Props) => {
         <Picker.Item label="Clínica" value="CLINICA" />
         </Picker>
       {saving
-        ? <ActivityIndicator size="large" color="#4B7BE5" />
-        : <Button title="Salvar" onPress={handleSave} color="#4B7BE5" />
+        ? <ActivityIndicator size="large" color="#8b8b72" />
+        : <Button title="Salvar" onPress={handleSave} color="#9ac6b1" />
       }
-      <Button title="Voltar" onPress={() => navigation.navigate('Cartao')} />
+      <Button title="Voltar" onPress={() => navigation.navigate('Unidades')} />
     </View>
   );
 };

@@ -77,9 +77,9 @@ const EditarCartoesScreen = ({ route, navigation }: Props) => {
               <Picker.Item label="Bloqueado" value="BLOQUEADO" />
             </Picker>
       {saving ? (
-        <ActivityIndicator size="large" color="#4B7BE5" />
+        <ActivityIndicator size="large" color="#8b8b72" />
       ) : (
-        <Button title="Salvar" onPress={handleSave} color="#4B7BE5" />
+        <Button title="Salvar" onPress={handleSave} color="#9ac6b1" />
       )}
       <Button title="Voltar" onPress={() => navigation.navigate('Cartao')} />
     </View>

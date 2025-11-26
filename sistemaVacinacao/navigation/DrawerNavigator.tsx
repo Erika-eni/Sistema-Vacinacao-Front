@@ -8,7 +8,7 @@ import CartoesScreen, { Cartao } from '@/screens/Cartoes/CartoesScreen';
 import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen';
 import FabricantesScreen from '@/screens/Fabricantes/FabricantesScreen';
-import FuncionariosScreen from '@/screens/Funcionarios/FuncionariosScreen';
+import FuncionariosScreen, { Funcionarios } from '@/screens/Funcionarios/FuncionariosScreen';
 import UnidadesScreen, { Unidades } from '@/screens/Unidades/UnidadesScreen';
 import VacinasScreen from '@/screens/Vacinas/VacinasScreen';
 import CriarEnderecosScreen from '@/screens/Enderecos/CriarEnderecosScreen';
@@ -17,6 +17,8 @@ import CriarCartoesScreen from '@/screens/Cartoes/CriarCartoesScreen';
 import EditarCartoesScreen from '@/screens/Cartoes/EditarCartoesScreen';
 import CriarUnidadesScreen from '@/screens/Unidades/CriarUnidadesScreen';
 import EditarUnidadesScreen from '@/screens/Unidades/EditarUnidadesScreen';
+import CriarFuncionariosScreen from '@/screens/Funcionarios/CriarFuncionariosScreen';
+import EditarFuncionariosScreen from '@/screens/Funcionarios/EditarFuncionariosScreen';
 
 
 
@@ -32,6 +34,8 @@ export type DrawerParamList = {
     CriarEnderecos:undefined;
     Fabricantes: undefined;
     Funcionarios: undefined;
+    EditarFuncionarios: {funcionarios: Funcionarios};
+    CriarFuncionarios: undefined;
     Unidades: undefined;
     EditarUnidades: {unidades: Unidades};
     CriarUnidades: undefined;
@@ -139,6 +143,16 @@ const DrawerNavigator = () => {
           title: 'Funcionarios',
         }}
       />  
+      <Drawer.Screen
+        name="CriarFuncionarios"
+        component={CriarFuncionariosScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+      />
+      <Drawer.Screen
+        name="EditarFuncionarios"
+        component={EditarFuncionariosScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+      />
       <Drawer.Screen
         name="Cartao"
         component={CartoesScreen}
