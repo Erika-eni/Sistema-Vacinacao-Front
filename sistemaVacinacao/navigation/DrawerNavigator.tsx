@@ -5,7 +5,7 @@ import CustomDrawerContent from '../components/CustomDrawerContent';
 import HomeScreen from '@/screens/HomeScreen';
 import AgendamentosScreen from '@/screens/Agendamentos/AgendamentosScreen';
 import CartoesScreen, { Cartao } from '@/screens/Cartoes/CartoesScreen';
-import CidadaosScreen from '@/screens/Cidadaos/CidadaosScreen';
+import CidadaosScreen, {Cidadaos} from '@/screens/Cidadaos/CidadaosScreen';
 import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen';
 import FabricantesScreen, { Fabricantes } from '@/screens/Fabricantes/FabricantesScreen';
 import FuncionariosScreen, { Funcionarios } from '@/screens/Funcionarios/FuncionariosScreen';
@@ -21,6 +21,8 @@ import CriarFuncionariosScreen from '@/screens/Funcionarios/CriarFuncionariosScr
 import EditarFuncionariosScreen from '@/screens/Funcionarios/EditarFuncionariosScreen';
 import CriarFabricantesScreen from '@/screens/Fabricantes/CriarFabricantesScreen';
 import EditarFabricantesScreen from '@/screens/Fabricantes/EditarFabricantesScreen';
+import CriarCidadaosScreen from '@/screens/Cidadaos/CriarCidadaosScreen';
+import EditarCidadaosScreen from '@/screens/Cidadaos/EditarCidadaosScreen';
 
 
 
@@ -31,6 +33,8 @@ export type DrawerParamList = {
     EditarCartoes: {cartoes: Cartao};
     CriarCartoes: undefined;
     Cidadaos: undefined;
+    EditarCidadaos: {cidadaos: Cidadaos};
+    CriarCidadaos: undefined;
     Enderecos: undefined;
     EditarEnderecos: {enderecos: Enderecos};
     CriarEnderecos:undefined;
@@ -98,12 +102,12 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name="CriarUnidades"
         component={CriarUnidadesScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Unidades' }}
       />
       <Drawer.Screen
         name="EditarUnidades"
         component={EditarUnidadesScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Unidades' }}
       />
       <Drawer.Screen
         name="Enderecos"
@@ -116,12 +120,12 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name="CriarEnderecos"
         component={CriarEnderecosScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Enderecos' }}
       />
       <Drawer.Screen
         name="EditarEnderecos"
         component={EditarEnderecosScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Enderecos' }}
       />
       <Drawer.Screen
         name="Fabricantes"
@@ -134,12 +138,12 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name="CriarFabricantes"
         component={CriarFabricantesScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Fabricantes' }}
       />
       <Drawer.Screen
         name="EditarFabricantes"
         component={EditarFabricantesScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Fabricantes' }}
       />
       <Drawer.Screen
         name="Cidadaos"
@@ -148,7 +152,17 @@ const DrawerNavigator = () => {
           drawerIcon: ({ color, size }) => <Ionicons name="person-add-outline" size={size} color={color} />,
           title: 'Cidadãos',
         }}
-      />  
+      /> 
+      <Drawer.Screen
+        name="CriarCidadaos"
+        component={CriarCidadaosScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Cidadaos' }}
+      />
+      <Drawer.Screen
+        name="EditarCidadaos"
+        component={EditarCidadaosScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Cidadaos' }}
+      /> 
       <Drawer.Screen
         name="Funcionarios"
         component={FuncionariosScreen}
@@ -160,12 +174,12 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name="CriarFuncionarios"
         component={CriarFuncionariosScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Funcionarios' }}
       />
       <Drawer.Screen
         name="EditarFuncionarios"
         component={EditarFuncionariosScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Funcionarios' }}
       />
       <Drawer.Screen
         name="Cartao"
@@ -178,12 +192,12 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         name="CriarCartoes"
         component={CriarCartoesScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Departamentos' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Cartoes' }}
       />
       <Drawer.Screen
         name="EditarCartoes"
         component={EditarCartoesScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar departamento' }}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Cartoes' }}
       />
     </Drawer.Navigator>  
   );

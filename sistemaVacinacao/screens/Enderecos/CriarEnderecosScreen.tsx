@@ -63,7 +63,7 @@ const CriarEnderecosScreen = ({ navigation }: Props) => {
         style={[styles.input, { height: 100 }]}
         multiline
       />
-      <Text style={styles.label}>Estado</Text>
+      <Text style={styles.label}>Estado (UF)</Text>
       <TextInput
         value={estado}
         onChangeText={setEstado}
