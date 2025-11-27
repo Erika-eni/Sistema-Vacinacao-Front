@@ -10,7 +10,7 @@ import EnderecosScreen, { Enderecos } from '@/screens/Enderecos/EnderecosScreen'
 import FabricantesScreen, { Fabricantes } from '@/screens/Fabricantes/FabricantesScreen';
 import FuncionariosScreen, { Funcionarios } from '@/screens/Funcionarios/FuncionariosScreen';
 import UnidadesScreen, { Unidades } from '@/screens/Unidades/UnidadesScreen';
-import VacinasScreen from '@/screens/Vacinas/VacinasScreen';
+import VacinasScreen, {Vacinas} from '@/screens/Vacinas/VacinasScreen';
 import CriarEnderecosScreen from '@/screens/Enderecos/CriarEnderecosScreen';
 import EditarEnderecosScreen from '@/screens/Enderecos/EditarEnderecosScreen';
 import CriarCartoesScreen from '@/screens/Cartoes/CriarCartoesScreen';
@@ -23,11 +23,15 @@ import CriarFabricantesScreen from '@/screens/Fabricantes/CriarFabricantesScreen
 import EditarFabricantesScreen from '@/screens/Fabricantes/EditarFabricantesScreen';
 import CriarCidadaosScreen from '@/screens/Cidadaos/CriarCidadaosScreen';
 import EditarCidadaosScreen from '@/screens/Cidadaos/EditarCidadaosScreen';
+import CriarVacinasScreen from '@/screens/Vacinas/CriarVacinasScreen';
+import EditarVacinasScreen from '@/screens/Vacinas/EditarVacinasScreen';
 
 
 
 export type DrawerParamList = {
     Vacinas: undefined;
+    EditarVacinas: {vacinas: Vacinas};
+    CriarVacinas: undefined;
     Agendamentos: undefined;
     Cartao: undefined;
     EditarCartoes: {cartoes: Cartao};
@@ -90,6 +94,16 @@ const DrawerNavigator = () => {
           drawerIcon: ({ color, size }) => <Ionicons name="eyedrop-outline" size={size} color={color} />,
           title: 'Vacinas',
         }}
+      />
+      <Drawer.Screen
+        name="CriarVacinas"
+        component={CriarVacinasScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Vacinas' }}
+      />
+      <Drawer.Screen
+        name="EditarVacinas"
+        component={EditarVacinasScreen}
+        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar Vacinas' }}
       />
       <Drawer.Screen
         name="Unidades"
